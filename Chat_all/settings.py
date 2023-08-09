@@ -109,11 +109,11 @@ WSGI_APPLICATION = 'Chat_all.wsgi.application'
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'chat_t',
+        'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': 'SanDisk@77',
-        'HOST': '127.0.0.1',
-        'PORT': 3306,
+        'PASSWORD': 'OkPS1JArdliy23WGVgQn',
+        'HOST': 'containers-us-west-64.railway.app',
+        'PORT': 5468,
     }
 }
 
