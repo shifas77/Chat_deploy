@@ -7,7 +7,7 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}\\manage.py",
-            "args": ["runserver", "192.168.10.6:8500"],
+            "args": ["collectstatic"],
             "django": true,
             "justMyCode": true
         }
