@@ -25,7 +25,7 @@ SECRET_KEY = '1ac1bd13-5ea4-412c-9eda-676a2313607b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['chatdeploy-production-cb9a.up.railway.app']
 
 
 # Application references
@@ -73,7 +73,7 @@ REST_FRAMEWORK = {
 
 # For development/testing
 SESSION_COOKIE_SECURE = True
-SESSION_COOKIE_DOMAIN = '*'
+SESSION_COOKIE_DOMAIN = 'chatdeploy-production-cb9a.up.railway.app'
 
 
 # Optional: Set session duration (in seconds)
