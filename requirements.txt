@@ -244,7 +244,6 @@ python-multipart==0.0.6
 python-pptx==0.6.21
 python-vlc==3.0.18122
 pythonnet==3.0.1
-pyttsx3==2.90
 pytube==15.0.0
 pytz==2022.1
 pytz-deprecation-shim==0.1.0.post0
