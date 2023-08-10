@@ -244,7 +244,6 @@ python-multipart==0.0.6
 python-pptx==0.6.21
 python-vlc==3.0.18122
 pythonnet==3.0.1
-pywinpty==2.0.9
 PyYAML==6.0
 pyzmq==24.0.1
 regex==2022.3.2
