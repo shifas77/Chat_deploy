@@ -231,7 +231,6 @@ PyMuPDF==1.20.1
 pynndescent==0.5.7
 pynvml==11.5.0
 pyparsing==3.0.9
-pypiwin32==223
 pyproject_hooks==1.0.0
 pyre-extensions==0.0.29
 pyreadline3==3.4.1
