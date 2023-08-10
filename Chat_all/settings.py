@@ -26,6 +26,7 @@ SECRET_KEY = '1ac1bd13-5ea4-412c-9eda-676a2313607b'
 DEBUG = False
 
 ALLOWED_HOSTS = ['chatdeploy-production-cb9a.up.railway.app']
+CRSF_TRUSTED_ORIGINS=['http://chatdeploy-production-cb9a.up.railway.app']
 
 
 # Application references
