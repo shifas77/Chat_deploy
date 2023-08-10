@@ -73,11 +73,20 @@ class LoginAPIView(APIView):
             # Authentication successful, create session for the user
             
 
-            # Return the response with the username (session data value)
+             # Return the response with the username (session data value)
             return Response({'message': 'Login successful', 'username': username}, status=status.HTTP_200_OK)
         else:
             # Authentication failed
             return Response({'error': 'Invalid username or password'}, status=status.HTTP_401_UNAUTHORIZED)
+
+async def main(prompt):
+            cookies = json.loads(open(r"C:\Users\user\Desktop\bing_cookies_.json", encoding="utf-8").read())
+            bot = await Chatbot.create(cookies=cookies)
+            result=json.dumps(await bot.ask(prompt=prompt, conversation_style=ConversationStyle.creative))
+            await bot.close()
+   
+            return result
+
 
 
 
