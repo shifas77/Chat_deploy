@@ -197,13 +197,11 @@ packaging==23.1
 pandas==2.0.3
 pandas-stubs==1.5.2.221213
 pandocfilters==1.5.0
-panml==1.0.8
 parso==0.8.3
 pathspec==0.11.1
 pathy==0.10.2
 pdf2image==1.16.3
 pdf2pptx==1.0.5
-peft==0.3.0
 pickleshare==0.7.5
 Pillow==9.2.0
 pip-requirements-parser==32.0.1
@@ -258,7 +256,6 @@ scikit-learn==1.1.2
 scipy==1.11.1
 seaborn==0.11.2
 Send2Trash==1.8.0
-sentence-transformers==2.2.2
 sentencepiece==0.1.99
 shap==0.41.0
 simple-di==0.1.5
@@ -305,7 +302,6 @@ torchvision==0.15.2
 tornado==6.2
 tqdm==4.65.0
 traitlets==5.3.0
-transformers==4.27.4
 typer==0.9.0
 types-pytz==2022.7.0.0
 typing-inspect==0.9.0
