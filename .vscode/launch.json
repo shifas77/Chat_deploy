@@ -7,7 +7,7 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}\\manage.py",
-            "args": ["collectstatic"],
+            "args": ["runserver", "https://chatdeploy-production-cb9a.up.railway.app/"],
             "django": true,
             "justMyCode": true
         }
