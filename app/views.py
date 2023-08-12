@@ -79,21 +79,9 @@ class LoginAPIView(APIView):
             # Authentication failed
             return Response({'error': 'Invalid username or password'}, status=status.HTTP_401_UNAUTHORIZED)
 
-async def main(prompt):
-    try:
-        cookies = json.loads(open("bing_cookies_.json", encoding="utf-8").read())
-        bot = await Chatbot.create(cookies=cookies)
-        result = await bot.ask(prompt=prompt, conversation_style=ConversationStyle.creative)
-        await bot.close()
-        return json.dumps(result)
-    
-    except Exception as e:
-        print("Error:", e)
-        return None
+
    
         
-
-
 
 
 
@@ -144,6 +132,21 @@ class ProcessPromptAPIView(APIView):
            
         
         print("line 146")
+
+        async def main(prompt):
+            try:
+                cookies = json.loads(open("bing_cookies_.json", encoding="utf-8").read())
+                bot = await Chatbot.create(cookies=cookies)
+                result = await bot.ask(prompt=prompt, conversation_style=ConversationStyle.creative)
+                await bot.close()
+                return json.dumps(result)
+    
+            except Exception as e:
+                print("Error:", e)
+                return None
+
+
+        
         data = str(json.loads(asyncio.run(main(prompt))))
 
         print(data)
