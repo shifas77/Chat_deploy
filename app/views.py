@@ -81,7 +81,7 @@ class LoginAPIView(APIView):
 
 async def main(prompt):
     try:
-        cookies = json.loads(open(r"bing_cookies_.json", encoding="utf-8").read())
+        cookies = json.loads(open("bing_cookies_.json", encoding="utf-8").read())
         bot = await Chatbot.create(cookies=cookies)
         result = await bot.ask(prompt=prompt, conversation_style=ConversationStyle.creative)
         await bot.close()
