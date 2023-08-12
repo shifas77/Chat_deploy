@@ -110,13 +110,13 @@ class ProcessPromptAPIView(APIView):
 
 
         query = '''
-        UPDATE chat_t.prompts
+        UPDATE railway.prompts
         SET prompt = CONCAT(COALESCE(prompt, ''), %s)
         WHERE id IN (
             SELECT row_num
             FROM (
                 SELECT uname, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) as row_num
-                FROM chat_t.studenttb
+                FROM railway.studenttb
             ) AS numbered_rows
             WHERE uname = %s
             );
