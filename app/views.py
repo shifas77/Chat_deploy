@@ -138,8 +138,10 @@ class ProcessPromptAPIView(APIView):
         prompt=prompt+",wrap the entire answer between +++ +++"
            
         
-        
+        Print("line 141")
         data = str(json.loads(asyncio.run(main(prompt))))
+
+        print(data)
        
         
        
@@ -156,6 +158,7 @@ class ProcessPromptAPIView(APIView):
 
 
         bot_response = formatted_string
+        print(bot_response)
         
 
 
@@ -165,7 +168,7 @@ class ProcessPromptAPIView(APIView):
             'processed_message': bot_response,
         }
         
-
+        print("line 171")
         return Response(response_data, status=status.HTTP_200_OK)
 
 
