@@ -143,7 +143,7 @@ class ProcessPromptAPIView(APIView):
         prompt=prompt+",wrap the entire answer between +++ +++"
            
         
-        Print("line 141")
+        print("line 146")
         data = str(json.loads(asyncio.run(main(prompt))))
 
         print(data)
