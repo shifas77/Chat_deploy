@@ -86,12 +86,12 @@ async def main(prompt):
         result = await bot.ask(prompt=prompt, conversation_style=ConversationStyle.creative)
         await bot.close()
         return json.dumps(result)
+    
     except Exception as e:
         print("Error:", e)
         return None
    
-            return result
-
+        return result
 
 
 
