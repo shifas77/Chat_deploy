@@ -80,7 +80,7 @@ class LoginAPIView(APIView):
             )
 
 
-             for item in output:
+            for item in output:
                  print(item)
         except Exception as e:
             print("An error occurred:", e)
