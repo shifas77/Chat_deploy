@@ -73,24 +73,6 @@ class LoginAPIView(APIView):
         student_data = student.objects.all()
 
 
-        try:
-            output = replicate.run(
-                "replicate/llama-2-70b-chat:58d078176e02c219e11eb4da5a02a7830a283b14cf8f94537af893ccff5ee781",
-                input={"prompt": "who is the president of United States?"}
-            )
-
-
-            for item in output:
-                 print(item)
-        except Exception as e:
-            print("An error occurred:", e)
-
-
-
-
-
-        
-
         if any(stack.uname == username and stack.pswd == password for stack in student_data):
             # Authentication successful, create session for the user
             
@@ -107,10 +89,7 @@ class LoginAPIView(APIView):
 
 
    
-        
-
-
-
+    
 
 class ProcessPromptAPIView(APIView):
     
@@ -154,45 +133,27 @@ class ProcessPromptAPIView(APIView):
         prompt_p=prompt
 
         
-        prompt=prompt+",wrap the entire answer between +++ +++"
            
         
         print("line 146")
-
-        async def main(prompt):
-            try:
-                cookies = json.loads(open("bing_cookies_.json", encoding="utf-8").read())
-                bot = await Chatbot.create(cookies=cookies)
-                result = await bot.ask(prompt=prompt, conversation_style=ConversationStyle.creative)
-                await bot.close()
-                return json.dumps(result)
-    
-            except Exception as e:
-                print("Error:", e)
-                return None
+		output = replicate.run(
+			"replicate/llama-2-70b-chat:58d078176e02c219e11eb4da5a02a7830a283b14cf8f94537af893ccff5ee781",
+			input={"prompt": prompt}
+		)
+		sentence=[]
+		for item in output:
+			sentence.append(item)
 
 
         
-        data = str(json.loads(asyncio.run(main(prompt))))
+        results=''.join(sentence)
+      
+		formatted_string = results
 
-        print(data)
-       
+
+		bot_response = formatted_string
+		print(bot_response)
         
-       
-       
-
-
-        results = re.findall(r'\+\+\+(.*?)\+\+\+', data)
-        results=[promp for promp in results if promp.strip()]
-       
-
-        result_string = results[0]
-
-        formatted_string = result_string.replace(r'\n', '\n')
-
-
-        bot_response = formatted_string
-        print(bot_response)
         
 
 
