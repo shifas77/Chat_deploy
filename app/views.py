@@ -88,8 +88,6 @@ class LoginAPIView(APIView):
 
 
 
-   
-    
 
 class ProcessPromptAPIView(APIView):
     
@@ -135,24 +133,24 @@ class ProcessPromptAPIView(APIView):
         
            
         
-        print("line 146")
-		output = replicate.run(
+        
+        output = replicate.run(
 			"replicate/llama-2-70b-chat:58d078176e02c219e11eb4da5a02a7830a283b14cf8f94537af893ccff5ee781",
 			input={"prompt": prompt}
 		)
-		sentence=[]
-		for item in output:
-			sentence.append(item)
-
+        
+        sentence=[]
+        for item in output:
+             sentence.append(item)
+      
 
         
         results=''.join(sentence)
       
-		formatted_string = results
+        formatted_string = results
 
-
-		bot_response = formatted_string
-		print(bot_response)
+        bot_response = formatted_string
+        print(bot_response)
         
         
 
