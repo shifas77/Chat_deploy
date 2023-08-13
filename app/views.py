@@ -72,13 +72,21 @@ class LoginAPIView(APIView):
         password = serializer.validated_data['pswd']
         student_data = student.objects.all()
 
-        output = replicate.run(
-        "replicate/llama-2-70b-chat:58d078176e02c219e11eb4da5a02a7830a283b14cf8f94537af893ccff5ee781",
-        input={"prompt": "who is the president of United States?"}
-          )
 
-        for item in output:
-            print(item)
+        try:
+            output = replicate.run(
+                "replicate/llama-2-70b-chat:58d078176e02c219e11eb4da5a02a7830a283b14cf8f94537af893ccff5ee781",
+                input={"prompt": "who is the president of United States?"}
+            )
+
+
+             for item in output:
+                 print(item)
+        except Exception as e:
+            print("An error occurred:", e)
+
+
+
 
 
         
