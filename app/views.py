@@ -60,7 +60,7 @@ from app.serializers import promptSerializer
 from app.serializers import promptlistSerializer
 from django.views.decorators.csrf import csrf_exempt
 
-export REPLICATE_API_TOKEN="r8_cBwvede14r3poOmt9WAQoBD6nTiLo0602eIaJ"
+os.environ['REPLICATE_API_TOKEN'] = 'r8_cBwvede14r3poOmt9WAQoBD6nTiLo0602eIaJ'
 
 
 class LoginAPIView(APIView):
