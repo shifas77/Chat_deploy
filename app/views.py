@@ -15,6 +15,7 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from EdgeGPT.EdgeUtils import Chatbot, Query, Cookie
 from EdgeGPT.EdgeGPT import ConversationStyle
+import replicate
 import asyncio
 import os
 import time
@@ -59,6 +60,8 @@ from app.serializers import promptSerializer
 from app.serializers import promptlistSerializer
 from django.views.decorators.csrf import csrf_exempt
 
+export REPLICATE_API_TOKEN="r8_cBwvede14r3poOmt9WAQoBD6nTiLo0602eIaJ"
+
 
 class LoginAPIView(APIView):
     def post(self, request):
@@ -69,6 +72,17 @@ class LoginAPIView(APIView):
         password = serializer.validated_data['pswd']
         student_data = student.objects.all()
 
+        output = replicate.run(
+        "replicate/llama-2-70b-chat:58d078176e02c219e11eb4da5a02a7830a283b14cf8f94537af893ccff5ee781",
+        input={"prompt": "who is the president of United States?"}
+          )
+
+        for item in output:
+            print(item)
+
+
+        
+
         if any(stack.uname == username and stack.pswd == password for stack in student_data):
             # Authentication successful, create session for the user
             
@@ -78,6 +92,10 @@ class LoginAPIView(APIView):
         else:
             # Authentication failed
             return Response({'error': 'Invalid username or password'}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+
+
 
 
    
